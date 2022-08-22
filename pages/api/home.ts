@@ -75,7 +75,6 @@ export default function handler(
           alt: "Co-workers en recepción",
         },
         title: "Tu tribu te espera",
-        detail: "Concepto<br/ >Co-living",
       },
       {
         img: {
@@ -83,7 +82,6 @@ export default function handler(
           alt: "Co-workers en recepción",
         },
         title: "Tu tribu te espera",
-        detail: "Experiencias<br/ >únicas",
       },
       {
         img: {
@@ -91,7 +89,6 @@ export default function handler(
           alt: "Co-workers en recepción",
         },
         title: "Tu tribu te espera",
-        detail: "Gastronomía<br/ >multi-formato",
       },
     ],
     hotelSection: {
