@@ -1,8 +1,14 @@
+import Link from "next/link";
+import Logo from "./Logo";
+
 const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
-  console.log(navUrls);
   return (
-    <div className="container">
-      <p>Soy el Nav. Estos son los links: {navUrls.urls}</p>
+    <div className="container flex absolute top-14 md:top-8">
+      <Link href="/">
+        <div>
+          <Logo />
+        </div>
+      </Link>
     </div>
   );
 };
