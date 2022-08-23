@@ -1,6 +1,6 @@
-const Calendar = ({ fill = "#3D63A9" }: { fill: string }) => {
+const Calendar = ({ fill = "#3D63A9" }: { fill?: string }) => {
   return (
-    <div>
+    <div className="flex items-center justify-center">
       <svg
         width="18"
         height="18"

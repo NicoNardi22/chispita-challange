@@ -16,6 +16,7 @@ export default function handler(
       "/experimenta/actividades",
       "/experimenta/gastronomia",
       "/experimenta/eventos",
+      "/unete",
     ],
   });
 }

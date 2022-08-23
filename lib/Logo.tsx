@@ -6,7 +6,7 @@ const Logo = () => {
   const { screen } = useContext(UserContext);
 
   return (
-    <div className="p-4 bg-white rounded-lg cursor-pointer">
+    <div className="p-4">
       {screen.width != undefined && screen.height != undefined ? (
         <Image
           className="object-fit"
