@@ -2,21 +2,20 @@ import Link from "next/link";
 import { useState } from "react";
 
 const LinksContent = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
+  const [showDDMenu, setShowDDMenu] = useState(false);
   let alojateUrl: string = "";
   let coWorkUrl: string = "";
   let uneteUrl: string = "";
   let experimentaUrls: Array<string> = [];
 
-  const [showDDMenu, setShowDDMenu] = useState(false);
-
   navUrls.urls.map((url) => {
     if (url.includes("experimenta")) {
       experimentaUrls.push(url);
-    } else if (url === "/alojate") {
+    } else if (url.includes("alojate")) {
       alojateUrl = url;
-    } else if (url === "/co-work") {
+    } else if (url.includes("co-work")) {
       coWorkUrl = url;
-    } else if (url === "/unete") {
+    } else if (url.includes("unete")) {
       uneteUrl = url;
     }
   });

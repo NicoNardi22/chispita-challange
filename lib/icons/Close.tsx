@@ -1,4 +1,4 @@
-const Close = ({ fill = "#2B2B2B" }: { fill: string }) => {
+const Close = ({ fill = "#2B2B2B" }: { fill?: string }) => {
   return (
     <div>
       <svg

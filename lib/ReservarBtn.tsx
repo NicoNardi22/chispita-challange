@@ -22,7 +22,7 @@ const ReservarBtn = ({
         "hover:cursor-happy p-2.5 xmd:p-4 flex cursor-pointer rounded-lg transition-colors duration-500 ease-in-out";
 
       if (fullwidth) {
-        value += " w-full";
+        value += " w-full justify-center py-5 ";
       }
       if (backgroundColor === "primary") {
         value += " bg-primary hover:bg-primary-dark";
@@ -53,7 +53,7 @@ const ReservarBtn = ({
   return (
     <div className={btnClass}>
       {fillIcon != "" ? <Calendar fill={fillIcon} /> : <Calendar />}
-      <p className={txtClass}>Reserva</p>
+      <p className={txtClass}>Reservar</p>
     </div>
   );
 };

@@ -1,16 +1,13 @@
-import { useEffect, useState } from "react";
-
 import Link from "next/link";
 import LinksContent from "./LinksContent";
 import Logo from "./Logo";
-import Menu from "./Menu";
+import Menu from "./menu/Menu";
 import ReservarBtn from "./ReservarBtn";
 import UserContext from "./UserContext";
 import { useContext } from "react";
 
 const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
   const { screen } = useContext(UserContext);
-  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <div className="container flex justify-between absolute top-14 md:top-8">
@@ -34,7 +31,7 @@ const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
               backgroundColor="white"
               fillIcon="#3D63A9"
             />
-            <Menu click={() => setShowMenu(!showMenu)} />
+            <Menu navUrls={navUrls} />
           </div>
         )
       ) : null}
