@@ -1,12 +1,16 @@
+import { useEffect, useState } from "react";
+
 import Link from "next/link";
 import LinksContent from "./LinksContent";
 import Logo from "./Logo";
+import Menu from "./Menu";
 import ReservarBtn from "./ReservarBtn";
 import UserContext from "./UserContext";
 import { useContext } from "react";
 
 const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
   const { screen } = useContext(UserContext);
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <div className="container flex justify-between absolute top-14 md:top-8">
@@ -17,16 +21,21 @@ const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
       </Link>
       {screen.width != undefined ? (
         screen.width >= 768 ? (
-          <div className="relative">
-            <div className="p-2 bg-white rounded-2xl flex items-center">
-              <LinksContent navUrls={navUrls} />
-              <div className="ml-2">
-                <ReservarBtn fillIcon="#FFFFFF" />
-              </div>
+          <div className="p-2 bg-white rounded-2xl flex items-center">
+            <LinksContent navUrls={navUrls} />
+            <div className="ml-2">
+              <ReservarBtn fillIcon="#FFFFFF" />
             </div>
           </div>
         ) : (
-          <div>{/* Menú mobile */}</div>
+          <div className="flex gap-x-2.5">
+            <ReservarBtn
+              textColor="primary"
+              backgroundColor="white"
+              fillIcon="#3D63A9"
+            />
+            <Menu click={() => setShowMenu(!showMenu)} />
+          </div>
         )
       ) : null}
     </div>

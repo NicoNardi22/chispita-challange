@@ -1,4 +1,4 @@
-const Menu = ({ fill = "#3D63A9" }: { fill: string }) => {
+const Menu = ({ fill = "#3D63A9" }: { fill?: string }) => {
   return (
     <div>
       <svg

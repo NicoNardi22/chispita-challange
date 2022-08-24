@@ -7,7 +7,7 @@ const LinksContent = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
   let uneteUrl: string = "";
   let experimentaUrls: Array<string> = [];
 
-  const [showMenu, setShowMenu] = useState(false);
+  const [showDDMenu, setShowDDMenu] = useState(false);
 
   navUrls.urls.map((url) => {
     if (url.includes("experimenta")) {
@@ -36,13 +36,13 @@ const LinksContent = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
       <div
         className="ml-2 xmd:ml-4 bg-white p-3 rounded-lg transition-colors duration-500 ease-in-out hover:bg-gray-400"
         id="dropdown-experimenta"
-        onMouseEnter={() => setShowMenu(true)}
+        onMouseEnter={() => setShowDDMenu(true)}
       >
         <p className="text-sm xmd:text-base">Experimenta</p>
-        {showMenu ? (
+        {showDDMenu ? (
           <div
             className="absolute top-20 bg-white rounded-lg p-2 xmd:p-4"
-            onMouseLeave={() => setShowMenu(false)}
+            onMouseLeave={() => setShowDDMenu(false)}
           >
             <div className="bg-white p-3 rounded-lg transition-colors duration-500 ease-in-out hover:bg-gray-400">
               <Link href={experimentaUrls[0]}>
