@@ -16,11 +16,13 @@ const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
         </a>
       </Link>
       {screen.width != undefined ? (
-        screen.width > 768 ? (
+        screen.width >= 768 ? (
           <div className="relative">
             <div className="p-2 bg-white rounded-2xl flex items-center">
               <LinksContent navUrls={navUrls} />
-              <ReservarBtn fillIcon="#FFFFFF" />
+              <div className="ml-2">
+                <ReservarBtn fillIcon="#FFFFFF" />
+              </div>
             </div>
           </div>
         ) : (

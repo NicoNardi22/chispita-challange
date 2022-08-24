@@ -12,8 +12,8 @@ const Logo = () => {
           className="object-fit"
           src="/assets/Logo.png"
           alt="Logo de Nomad"
-          width={screen.width > 768 ? 95 : 71}
-          height={screen.width > 768 ? 16 : 12}
+          width={screen.width >= 768 ? 95 : 71}
+          height={screen.width >= 768 ? 16 : 12}
         ></Image>
       ) : null}
     </div>

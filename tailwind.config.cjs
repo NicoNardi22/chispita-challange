@@ -3,7 +3,11 @@ const colors = require("tailwindcss/colors");
 const config = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./lib/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      cursor: {
+        happy: "url(/assets/in-love.png), pointer",
+      },
+    },
     colors: {
       black: colors.black,
       white: colors.white,
@@ -23,6 +27,9 @@ const config = {
         md: "5.313rem",
       },
       center: true,
+    },
+    screens: {
+      xmd: "960px",
     },
   },
   plugins: [],

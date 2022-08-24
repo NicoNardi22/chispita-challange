@@ -19,7 +19,7 @@ const ReservarBtn = ({
   useEffect(() => {
     const btnClassCreator = () => {
       let value =
-        "p-4 flex cursor-pointer rounded-lg transition-colors duration-500 ease-in-out";
+        "hover:cursor-happy p-4 flex cursor-pointer rounded-lg transition-colors duration-500 ease-in-out";
 
       if (fullwidth) {
         value += " w-full";
@@ -36,10 +36,10 @@ const ReservarBtn = ({
     btnClassCreator();
 
     const txtClassCreator = () => {
-      let value = "ml-2.5 font-semibold leading-6";
+      let value = "ml-2.5 font-semibold leading-6 text-sm xmd:text-base";
 
-      if (textColor) {
-        value += ` text-${textColor}`;
+      if (textColor === "white") {
+        value += " text-white";
       }
 
       setTxtClass(value);
