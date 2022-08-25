@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Drawer from "./drawer/Drawer";
+import { useDrawer } from "./drawer/DrawerContext";
 
 import Calendar from "./icons/Calendar";
 
@@ -15,6 +17,8 @@ const ReservarBtn = ({
 }) => {
   const [btnClass, setBtnClass] = useState("");
   const [txtClass, setTxtClass] = useState("");
+
+  const { openDrawer, setOpenDrawer } = useDrawer();
 
   useEffect(() => {
     const btnClassCreator = () => {
@@ -51,9 +55,12 @@ const ReservarBtn = ({
   }, [backgroundColor, fullwidth, textColor]);
 
   return (
-    <div className={btnClass}>
-      {fillIcon != "" ? <Calendar fill={fillIcon} /> : <Calendar />}
-      <p className={txtClass}>Reservar</p>
+    <div>
+      <button className={btnClass} onClick={() => setOpenDrawer(!openDrawer)}>
+        {fillIcon != "" ? <Calendar fill={fillIcon} /> : <Calendar />}
+        <p className={txtClass}>Reservar</p>
+      </button>
+      <Drawer />
     </div>
   );
 };

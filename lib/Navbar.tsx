@@ -17,7 +17,7 @@ const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
         </a>
       </Link>
       {screen.width != undefined ? (
-        screen.width >= 768 ? (
+        screen.width >= 960 ? (
           <div className="p-2 bg-white rounded-2xl flex items-center">
             <LinksContent navUrls={navUrls} />
             <div className="ml-2">

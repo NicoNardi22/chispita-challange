@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import type { AppProps } from "next/app";
 import UserContext from "../lib/UserContext";
+import { DrawerProvider } from "../lib/drawer/DrawerContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const screen = useWindowSize();
@@ -43,7 +44,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
       }}
     >
-      <Component {...pageProps} />
+      <DrawerProvider>
+        <Component {...pageProps} />
+      </DrawerProvider>
     </UserContext.Provider>
   );
 }

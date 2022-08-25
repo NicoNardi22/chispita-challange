@@ -41,7 +41,7 @@ const MenuContent = ({
   useEffect(() => {
     const menuClassCreator = () => {
       let value =
-        "fixed top-0 h-screen w-screen z-50 bg-white px-6 pt-14 pb-11 transition-all duration-300 ease-in-out overflow-y-auto ";
+        "fixed top-0 h-screen w-screen z-40 bg-white px-6 pt-14 pb-11 transition-all duration-300 ease-in-out overflow-y-auto ";
 
       if (show) {
         value += "left-0";
