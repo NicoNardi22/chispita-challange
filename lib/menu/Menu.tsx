@@ -1,15 +1,8 @@
 import MenuBtn from "../menu/MenuBtn";
 import MenuContent from "./MenuContent";
 import { useState } from "react";
-import type { HotelData } from "../../pages/api/hotels/availability";
 
-const Menu = ({
-  navUrls,
-  hotelsInfo,
-}: {
-  navUrls: { urls: Array<string> };
-  hotelsInfo: HotelData[];
-}) => {
+const Menu = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
@@ -19,7 +12,6 @@ const Menu = ({
         show={showMenu}
         click={() => setShowMenu(!showMenu)}
         navUrls={navUrls}
-        hotelsInfo={hotelsInfo}
       />
     </>
   );

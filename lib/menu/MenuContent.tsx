@@ -8,18 +8,15 @@ import Logo from "../Logo";
 import Minus from "../icons/Minus";
 import Plus from "../icons/Plus";
 import ReservarBtn from "../ReservarBtn";
-import { HotelData } from "../../pages/api/hotels/availability";
 
 const MenuContent = ({
   show,
   click,
   navUrls,
-  hotelsInfo,
 }: {
   show: boolean;
   click: MouseEventHandler;
   navUrls: { urls: Array<string> };
-  hotelsInfo: HotelData[];
 }) => {
   let alojateUrl: string = "";
   let coWorkUrl: string = "";
@@ -113,11 +110,7 @@ const MenuContent = ({
           <a className="ml-3">English</a>
         </div>
         <div className="mt-11">
-          <ReservarBtn
-            fullwidth={true}
-            fillIcon="white"
-            hotelsInfo={hotelsInfo}
-          />
+          <ReservarBtn fullwidth={true} fillIcon="white" />
         </div>
       </div>
     </div>

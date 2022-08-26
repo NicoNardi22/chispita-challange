@@ -3,16 +3,14 @@ import Head from "next/head";
 import NavBar from "../lib/Navbar";
 import type { NextPage } from "next";
 import axios from "axios";
-import type { HotelData } from "./api/hotels/availability";
 
 interface Props {
   navUrls: {
     urls: string[];
   };
-  hotelsInfo: HotelData[];
 }
 
-const Home: NextPage<Props> = ({ navUrls, hotelsInfo }) => {
+const Home: NextPage<Props> = ({ navUrls }) => {
   return (
     <div>
       <Head>
@@ -21,7 +19,7 @@ const Home: NextPage<Props> = ({ navUrls, hotelsInfo }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <NavBar navUrls={navUrls} hotelsInfo={hotelsInfo}></NavBar>
+        <NavBar navUrls={navUrls}></NavBar>
       </main>
     </div>
   );
@@ -29,27 +27,21 @@ const Home: NextPage<Props> = ({ navUrls, hotelsInfo }) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const emptyUrls: { urls: Array<string> } = { urls: [""] };
-  const emptyHotelsInfo: Array<HotelData> = [];
 
   //url from page/api
   try {
     const resUrls = await axios(`http://localhost:3000/api/nav`);
     const navUrls = await resUrls.data;
 
-    const resHotels = await axios(
-      `http://localhost:3000/api/hotels/availability`
-    );
-    const hotelsInfo: HotelData[] = await resHotels.data;
-
     return {
-      props: { navUrls, hotelsInfo },
+      props: { navUrls },
     };
   } catch (error) {
     console.error(error);
   }
 
   return {
-    props: { emptyUrls, emptyHotelsInfo },
+    props: { emptyUrls },
   };
 };
 
