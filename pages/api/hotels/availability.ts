@@ -4,28 +4,27 @@ interface Images {
   url: string;
   alt: string;
 }
-interface HotelData {
+export interface HotelData {
   img: Images;
+  logo: Images;
   wording: string;
   details: Array<string>;
   price: number;
 }
 
-type Hotels = {
-  urban: HotelData;
-  tribe: HotelData;
-  family: HotelData;
-};
-
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Hotels>
+  res: NextApiResponse<Array<HotelData>>
 ) {
-  res.status(200).json({
-    urban: {
+  res.status(200).json([
+    {
       img: {
-        url: "/public/assets/Hotels/urban-picture.png",
+        url: "/assets/Hotels/urban-picture.png",
         alt: "Espacio recreativo de hotel Urban",
+      },
+      logo: {
+        url: "/assets/urban-logo-dark.png",
+        alt: "Logo de hotel Urban",
       },
       wording:
         "Social hub de alta experiencia, para millennials y zetas ejecutivos.",
@@ -38,10 +37,14 @@ export default function handler(
       ],
       price: 4560,
     },
-    tribe: {
+    {
       img: {
-        url: "/public/assets/Hotels/tribe-picture.png",
+        url: "/assets/Hotels/tribe-picture.png",
         alt: "Mujer contemplando el atardecer en la montaña",
+      },
+      logo: {
+        url: "/assets/tribe-logo-dark.png",
+        alt: "Logo de hotel Tribe",
       },
       wording:
         "Exploradores, artistas y emprendedores juntos en un lugar único.",
@@ -53,10 +56,14 @@ export default function handler(
       ],
       price: 3190,
     },
-    family: {
+    {
       img: {
-        url: "/public/assets/Hotels/family-picture.png",
+        url: "/assets/Hotels/family-picture.png",
         alt: "Familia paseando en bicicletas",
+      },
+      logo: {
+        url: "/assets/family-logo-dark.png",
+        alt: "Logo de hotel Family",
       },
       wording:
         "Vive junto a toda tu familia la mejor experiencia de sus vidas.",
@@ -70,5 +77,5 @@ export default function handler(
       ],
       price: 4560,
     },
-  });
+  ]);
 }

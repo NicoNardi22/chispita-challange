@@ -15,6 +15,7 @@ const config = {
       green: colors.green,
       red: colors.red,
       slate: colors.slate,
+      zinc: colors.zinc,
       primary: {
         DEFAULT: "#3D63A9",
         dark: "#253B65",

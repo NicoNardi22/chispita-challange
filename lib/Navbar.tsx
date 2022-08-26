@@ -5,8 +5,15 @@ import Menu from "./menu/Menu";
 import ReservarBtn from "./ReservarBtn";
 import UserContext from "./UserContext";
 import { useContext } from "react";
+import type { HotelData } from "../pages/api/hotels/availability";
 
-const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
+const NavBar = ({
+  navUrls,
+  hotelsInfo,
+}: {
+  navUrls: { urls: Array<string> };
+  hotelsInfo: HotelData[];
+}) => {
   const { screen } = useContext(UserContext);
 
   return (
@@ -21,7 +28,7 @@ const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
           <div className="p-2 bg-white rounded-2xl flex items-center">
             <LinksContent navUrls={navUrls} />
             <div className="ml-2">
-              <ReservarBtn fillIcon="#FFFFFF" />
+              <ReservarBtn fillIcon="#FFFFFF" hotelsInfo={hotelsInfo} />
             </div>
           </div>
         ) : (
@@ -30,8 +37,9 @@ const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
               textColor="primary"
               backgroundColor="white"
               fillIcon="#3D63A9"
+              hotelsInfo={hotelsInfo}
             />
-            <Menu navUrls={navUrls} />
+            <Menu navUrls={navUrls} hotelsInfo={hotelsInfo} />
           </div>
         )
       ) : null}
