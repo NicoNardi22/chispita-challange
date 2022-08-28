@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { useDrawer } from "../drawer/DrawerContext";
 import type { HotelData } from "../../pages/api/hotels/availability";
 import axios from "axios";
+import Loading from "../icons/Loading";
 
 const Drawer = () => {
   const { screen } = useContext(UserContext);
@@ -100,7 +101,12 @@ const Drawer = () => {
         </button>
       </div>
       {isLoading ? (
-        <div>Loading ...</div>
+        <div className="flex items-center">
+          Loading{" "}
+          <span>
+            <Loading />
+          </span>
+        </div>
       ) : hotelsInfo != undefined ? (
         hotelsInfo.map(
           (hotel: HotelData, index: number): ReactNode => {

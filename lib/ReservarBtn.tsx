@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Drawer from "./drawer/Drawer";
 import { useDrawer } from "./drawer/DrawerContext";
-import type { HotelData } from "./../pages/api/hotels/availability";
 import Calendar from "./icons/Calendar";
 
 const ReservarBtn = ({

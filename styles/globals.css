@@ -14,3 +14,32 @@ body {
 .container {
   @apply mx-0 max-w-full;
 }
+
+/* Styles for Swiper Hero */
+.swiper-hero {
+  @apply w-full h-[800px];
+}
+
+.swiper-hero > .swiper-horizontal > .swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-horizontal {
+  height: 1px !important;
+  width: 30px !important;
+  top: auto !important;
+  bottom: 108px !important;
+  left: 24px !important;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: white !important;
+}
+
+@media (min-width: 960px) {
+  .swiper-hero > .swiper-horizontal > .swiper-pagination-progressbar,
+  .swiper-pagination-progressbar.swiper-pagination-horizontal {
+    height: 1px !important;
+    width: 114px !important;
+    top: auto !important;
+    bottom: 72px !important;
+    left: 85px !important;
+  }
+}

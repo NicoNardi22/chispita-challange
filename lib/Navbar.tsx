@@ -10,7 +10,7 @@ const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
   const { screen } = useContext(UserContext);
 
   return (
-    <div className="container flex justify-between absolute top-14 md:top-8">
+    <div className="container z-10 flex justify-between absolute top-14 md:top-8">
       <Link href="/">
         <a className="bg-white rounded-lg flex items-center justify-center transition-colors duration-500 ease-in-out hover:bg-gray-400">
           <Logo />
