@@ -53,11 +53,10 @@ const Hero = ({
           setActiveSlide(event.activeIndex.toString());
         }}
         onSwiper={(swiper) => {
-          console.log(swiper);
           setSwiper(swiper);
         }}
         autoplay={{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
       >
@@ -111,9 +110,6 @@ const Hero = ({
               );
             })}
           </div>
-          {/* <p className="text-white tracking-wider xmd:tracking-wide text-sm xmd:text-base font-normal xmd:font-semibold">
-          {activeSlide}
-        </p> */}
         </div>
       </Swiper>
     </div>

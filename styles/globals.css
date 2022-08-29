@@ -15,7 +15,7 @@ body {
   @apply mx-0 max-w-full;
 }
 
-/* Styles for Swiper Hero */
+/* Overriding styles for Swiper Hero */
 .swiper-hero {
   @apply w-full h-[800px];
 }
