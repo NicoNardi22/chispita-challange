@@ -8,6 +8,7 @@ import type { NextPage } from "next";
 import Hero from "../lib/Hero";
 import NavBar from "../lib/Navbar";
 import Loading from "../lib/icons/Loading";
+import Phrasing from "../lib/Phrasing";
 
 interface Props {
   navUrls: {
@@ -60,6 +61,7 @@ const Home: NextPage<Props> = ({ navUrls, landing }) => {
               bannerDesktop={landing.bannerDesktop}
               bannerMobile={landing.bannerMobile}
             />
+            <Phrasing />
           </>
         )}
       </main>
