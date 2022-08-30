@@ -4,20 +4,24 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Router from "next/router";
 import type { Data } from "./api/home";
+import type { FooterData } from "./api/footer";
 import type { NextPage } from "next";
 import Hero from "../lib/Hero";
 import NavBar from "../lib/Navbar";
 import Loading from "../lib/icons/Loading";
 import Phrasing from "../lib/Phrasing";
+import Footer from "../lib/Footer";
+import Greeting from "../lib/Greeting";
 
 interface Props {
   navUrls: {
     urls: string[];
   };
   landing: Data;
+  footerData: FooterData;
 }
 
-const Home: NextPage<Props> = ({ navUrls, landing }) => {
+const Home: NextPage<Props> = ({ navUrls, landing, footerData }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -62,6 +66,10 @@ const Home: NextPage<Props> = ({ navUrls, landing }) => {
               bannerMobile={landing.bannerMobile}
             />
             <Phrasing />
+            {/* Carousel */}
+            {/* Footer */}
+            <Footer footerData={footerData} />
+            <Greeting />
           </>
         )}
       </main>
@@ -80,6 +88,25 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       hotelsInfo: [],
     },
   };
+  const emptyImg: { url: string; alt: string } = {
+    url: "",
+    alt: "",
+  };
+  const emptyFooter: FooterData = {
+    logo: emptyImg,
+    wording: "",
+    networkIcons: {
+      youtube: emptyImg,
+      facebook: emptyImg,
+      twitter: emptyImg,
+      instagram: emptyImg,
+    },
+    us: {
+      telephone: "",
+      email: "",
+    },
+    urls: [""],
+  };
 
   try {
     //url from page/api
@@ -90,15 +117,19 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const resLanding = await axios("http://localhost:3000/api/home");
     const landing = await resLanding.data;
 
+    // Footer data
+    const resFooter = await axios("http://localhost:3000/api/footer");
+    const footerData = await resFooter.data;
+
     return {
-      props: { navUrls, landing },
+      props: { navUrls, landing, footerData },
     };
   } catch (error) {
     console.error(error);
   }
 
   return {
-    props: { emptyUrls, emptyLanding },
+    props: { emptyUrls, emptyLanding, emptyFooter },
   };
 };
 

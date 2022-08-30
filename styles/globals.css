@@ -8,6 +8,7 @@
 html,
 body {
   font-family: "Nunito", sans-serif;
+  /* TODO: remove bg-gray */
   @apply bg-gray-400;
 }
 

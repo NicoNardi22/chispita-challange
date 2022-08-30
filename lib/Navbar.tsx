@@ -37,13 +37,13 @@ const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
       className="container z-10 flex justify-between top-14 xmd:top-8 fixed transition-all duration-500 ease-in-out"
     >
       <Link href="/">
-        <a className="bg-white rounded-lg flex items-center justify-center transition-colors duration-500 ease-in-out hover:bg-gray-400">
+        <a className="bg-white rounded-lg flex items-center justify-center transition-colors duration-500 ease-in-out hover:bg-gray-400 shadow-lg">
           <Logo />
         </a>
       </Link>
       {screen.width != undefined ? (
         screen.width >= 960 ? (
-          <div className="p-2 bg-white rounded-2xl flex items-center">
+          <div className="p-2 bg-white rounded-2xl flex items-center shadow-lg">
             <LinksContent navUrls={navUrls} />
             <div className="ml-2">
               <ReservarBtn fillIcon="#FFFFFF" />
