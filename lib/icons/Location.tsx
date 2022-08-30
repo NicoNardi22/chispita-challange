@@ -1,4 +1,4 @@
-const Location = ({ fill = "white" }: { fill: string }) => {
+const Location = ({ fill = "white" }: { fill?: string }) => {
   return (
     <div>
       <svg

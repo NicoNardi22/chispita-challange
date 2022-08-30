@@ -12,6 +12,9 @@ import Loading from "../lib/icons/Loading";
 import Phrasing from "../lib/Phrasing";
 import Footer from "../lib/Footer";
 import Greeting from "../lib/Greeting";
+import HotelSectionMobile from "../lib/HotelSectionMobile";
+import UserContext from "../lib/UserContext";
+import { useContext } from "react";
 
 interface Props {
   navUrls: {
@@ -23,6 +26,7 @@ interface Props {
 
 const Home: NextPage<Props> = ({ navUrls, landing, footerData }) => {
   const [loading, setLoading] = useState(false);
+  const { screen } = useContext(UserContext);
 
   useEffect(() => {
     const start = () => {
@@ -66,8 +70,11 @@ const Home: NextPage<Props> = ({ navUrls, landing, footerData }) => {
               bannerMobile={landing.bannerMobile}
             />
             <Phrasing />
-            {/* Carousel */}
-            {/* Footer */}
+            {/* Carousel desktop */}
+            {/* Hotels info mobile */}
+            {screen.width != undefined && screen.width < 960 ? (
+              <HotelSectionMobile hotelSection={landing.hotelSection} />
+            ) : null}
             <Footer footerData={footerData} />
             <Greeting />
           </>

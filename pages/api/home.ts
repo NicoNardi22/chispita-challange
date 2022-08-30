@@ -14,18 +14,27 @@ export interface BannerSlide {
   detail?: string;
 }
 
-interface HotelData {
+export interface HotelData {
   img: {
     url: string;
     alt: string;
   };
   title: Logo;
+  widthTitle: {
+    desktop: number;
+    mobile: number;
+  };
+  heightTitle: {
+    desktop: number;
+    mobile: number;
+  };
   location: string;
+  backgroundColor: string;
   detail?: string;
   servicesIcon?: Array<Logo>;
 }
 
-interface HotelSection {
+export interface HotelSection {
   title: string;
   detail: string;
   hotelsInfo: Array<HotelData>;
@@ -105,7 +114,16 @@ export default function handler(
             url: "/assets/urban-logo.png",
             alt: "logo de hotel Urban",
           },
+          widthTitle: {
+            desktop: 214,
+            mobile: 171,
+          },
+          heightTitle: {
+            desktop: 58,
+            mobile: 48,
+          },
           location: "Arequipa",
+          backgroundColor: "primary",
         },
         {
           img: {
@@ -116,7 +134,16 @@ export default function handler(
             url: "/assets/tribe-logo.png",
             alt: "logo de hotel Tribe",
           },
+          widthTitle: {
+            desktop: 111.36,
+            mobile: 111.36,
+          },
+          heightTitle: {
+            desktop: 49,
+            mobile: 49,
+          },
           location: "Arequipa",
+          backgroundColor: "#ADC22F",
           detail:
             "Hub de exploradores, artistas y profecionales que ven al mundo su verdadero hogar.",
           servicesIcon: [
@@ -143,7 +170,16 @@ export default function handler(
             url: "/assets/family-logo.png",
             alt: "Logo de hotel Family",
           },
+          widthTitle: {
+            desktop: 162,
+            mobile: 162,
+          },
+          heightTitle: {
+            desktop: 61,
+            mobile: 61,
+          },
           location: "Arequipa",
+          backgroundColor: "#AA2275",
         },
       ],
     },
