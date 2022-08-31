@@ -103,7 +103,7 @@ export default function handler(
     hotelSection: {
       title: "Hoteles que son hogares",
       detail:
-        "Siéntete parte de la tribu en un ambiente diseñado para que experimentes el viaje que va a cambiar algo en ti.",
+        "Siéntete parte de la tribu en un ambiente diseñado para que<br />experimentes el viaje que va a cambiar algo en ti.",
       hotelsInfo: [
         {
           img: {
@@ -124,6 +124,22 @@ export default function handler(
           },
           location: "Arequipa",
           backgroundColor: "primary",
+          detail:
+            "Hub de exploradores, artistas y profecionales que ven al mundo su verdadero hogar.",
+          servicesIcon: [
+            {
+              url: "/assets/Home/Bed.png",
+              alt: "Logo de cama",
+            },
+            {
+              url: "/assets/Home/Silverware.png",
+              alt: "Logo de cubiertos",
+            },
+            {
+              url: "/assets/Home/Horse.png",
+              alt: "Logo de caballo de carrusel",
+            },
+          ],
         },
         {
           img: {
@@ -180,6 +196,22 @@ export default function handler(
           },
           location: "Arequipa",
           backgroundColor: "#AA2275",
+          detail:
+            "Hub de exploradores, artistas y profecionales que ven al mundo su verdadero hogar.",
+          servicesIcon: [
+            {
+              url: "/assets/Home/Bed.png",
+              alt: "Logo de cama",
+            },
+            {
+              url: "/assets/Home/Silverware.png",
+              alt: "Logo de cubiertos",
+            },
+            {
+              url: "/assets/Home/Horse.png",
+              alt: "Logo de caballo de carrusel",
+            },
+          ],
         },
       ],
     },

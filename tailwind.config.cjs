@@ -7,6 +7,10 @@ const config = {
       cursor: {
         happy: "url(/assets/in-love.png), pointer",
       },
+      backgroundImage: {
+        "split-zinc-white":
+          "linear-gradient(to right, #F4F4F4 80% , white 40%);",
+      },
     },
     colors: {
       black: colors.black,

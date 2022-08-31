@@ -15,6 +15,7 @@ import Greeting from "../lib/Greeting";
 import HotelSectionMobile from "../lib/HotelSectionMobile";
 import UserContext from "../lib/UserContext";
 import { useContext } from "react";
+import HotelSectionDesktop from "../lib/HotelSectionDesktop";
 
 interface Props {
   navUrls: {
@@ -55,7 +56,7 @@ const Home: NextPage<Props> = ({ navUrls, landing, footerData }) => {
       <main>
         {loading ? (
           <div className="w-screen h-screen flex items-center justify-center">
-            <h1 className="flex items-center justify-center">
+            <h1 className="flex justify-center text-7xl font-bold">
               Loading
               <span>
                 <Loading />
@@ -72,9 +73,11 @@ const Home: NextPage<Props> = ({ navUrls, landing, footerData }) => {
             <Phrasing />
             {/* Carousel desktop */}
             {/* Hotels info mobile */}
-            {screen.width != undefined && screen.width < 960 ? (
+            {screen.width != undefined && screen.width >= 960 ? (
+              <HotelSectionDesktop hotelSection={landing.hotelSection} />
+            ) : (
               <HotelSectionMobile hotelSection={landing.hotelSection} />
-            ) : null}
+            )}
             <Footer footerData={footerData} />
             <Greeting />
           </>

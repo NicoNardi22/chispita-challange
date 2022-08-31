@@ -9,8 +9,6 @@
 html,
 body {
   font-family: "Nunito", sans-serif;
-  /* TODO: remove bg-gray */
-  @apply bg-gray-400;
 }
 
 .container {
@@ -45,3 +43,6 @@ body {
     left: 85px !important;
   }
 }
+
+/* Overriding styles for Swiper Hotel */
+/* .swiper-hotel */
