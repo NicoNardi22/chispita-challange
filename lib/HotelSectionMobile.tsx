@@ -12,7 +12,10 @@ const HotelSectionMobile = ({
         {hotelSection.title}
       </p>
       <div className="mt-6">
-        <p className="font-light text-xl leading-8">{hotelSection.detail}</p>
+        <p
+          className="font-light text-xl leading-8"
+          dangerouslySetInnerHTML={{ __html: hotelSection.detail }}
+        ></p>
       </div>
       <div className="mt-12 grid grid-flow-row gap-y-20">
         {hotelSection.hotelsInfo.map((hotelInfo, index) => {

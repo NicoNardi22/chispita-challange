@@ -11,17 +11,14 @@ const NavBar = ({ navUrls }: { navUrls: { urls: Array<string> } }) => {
 
   useEffect(() => {
     const nav = document.getElementById("nav");
-    // console.log(nav?.getBoundingClientRect());
     let lastScrollY = window.scrollY;
 
     window.addEventListener("scroll", () => {
       if (lastScrollY < window.scrollY) {
-        console.log("scroll down");
         nav && nav.classList.remove("top-14");
         nav && nav.classList.remove("xmd:top-8");
         nav && nav.classList.add(`-top-full`);
       } else {
-        console.log("scroll up");
         nav && nav.classList.add("top-14");
         nav && nav.classList.add("xmd:top-8");
         nav && nav.classList.remove(`-top-full`);

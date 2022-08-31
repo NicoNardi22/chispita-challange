@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState, useEffect, ReactNode } from "react";
+import { useRouter } from "next/router";
 import type { HotelSection } from "../pages/api/home";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
@@ -11,9 +11,7 @@ const HotelSectionDesktop = ({
 }: {
   hotelSection: HotelSection;
 }) => {
-  const [hoveredCard, setHoveredCard] = useState<ReactNode>();
-
-  useEffect(() => {}, []);
+  const router = useRouter();
 
   return (
     <div className="mt-20 bg-split-zinc-white py-[72px]">
@@ -35,12 +33,6 @@ const HotelSectionDesktop = ({
             slidesPerView={1}
             loop
             grabCursor={true}
-            onSlideChange={(event) => {
-              console.log("slide change");
-            }}
-            onSwiper={(swiper) => {
-              console.log("swiper", swiper);
-            }}
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,
@@ -113,7 +105,10 @@ const HotelSectionDesktop = ({
                           ></div>
                         </div>
                         <p className="mt-4 text-white leading-5 text-sm tracking-wide">
-                          Servicios de este hotel
+                          {router.locale != undefined &&
+                          router.locale === "es-AR"
+                            ? "Servicios de este hotel"
+                            : "Services of this hotel"}
                         </p>
                         <div className="mt-2.5 flex items-center">
                           {hotelInfo.servicesIcon?.map((icon, index) => {

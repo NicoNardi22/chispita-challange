@@ -2,9 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
 import { FooterData } from "../pages/api/footer";
+import { useRouter } from "next/router";
 import UserContext from "./UserContext";
 
 const Footer = ({ footerData }: { footerData: FooterData }) => {
+  const router = useRouter();
   const { screen } = useContext(UserContext);
 
   return (
@@ -74,7 +76,9 @@ const Footer = ({ footerData }: { footerData: FooterData }) => {
           </div>
           <div className="flex flex-col justify-center">
             <p className="text-2xl font-semibold text-center xmd:text-left">
-              Contactá con nosotros
+              {router.locales != undefined && router.locale === "es-AR"
+                ? "Contactá con nosotros"
+                : "Contact us"}
             </p>
             <div className="mt-4">
               <p className="text-lg tracking-wider text-center xmd:text-left">

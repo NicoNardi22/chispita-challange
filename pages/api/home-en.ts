@@ -55,64 +55,64 @@ export default function handler(
       {
         img: {
           url: "/assets/Home/banner-desktop.png",
-          alt: "Co-workers en recepción",
+          alt: "Co-workers at reception",
         },
-        title: "Tu tribu<br />te espera",
-        detail: "Concepto<br/ >Co-living",
+        title: "Your tribe<br />waits for you",
+        detail: "Concept<br/ >Co-living",
       },
       {
         img: {
           url: "/assets/Home/banner-desktop.png",
-          alt: "Co-workers en recepción",
+          alt: "Co-workers at reception",
         },
-        title: "Tu tribu<br />te espera",
-        detail: "Experiencias<br/ >únicas",
+        title: "Your tribe<br />waits for you",
+        detail: "Unique<br/>experiences",
       },
       {
         img: {
           url: "/assets/Home/banner-desktop.png",
-          alt: "Co-workers en recepción",
+          alt: "Co-workers at reception",
         },
-        title: "Tu tribu<br />te espera",
-        detail: "Gastronomía<br/ >multi-formato",
+        title: "Your tribe<br />waits for you",
+        detail: "Gastronomy<br/ >multi-format",
       },
     ],
     bannerMobile: [
       {
         img: {
           url: "/assets/Home/banner-mobile.png",
-          alt: "Co-workers en recepción",
+          alt: "Co-workers at reception",
         },
-        title: "Tu tribu<br />te espera",
+        title: "Your tribe<br />waits for you",
       },
       {
         img: {
           url: "/assets/Home/banner-mobile.png",
-          alt: "Co-workers en recepción",
+          alt: "Co-workers at reception",
         },
-        title: "Tu tribu<br />te espera",
+        title: "Your tribe<br />waits for you",
       },
       {
         img: {
           url: "/assets/Home/banner-mobile.png",
-          alt: "Co-workers en recepción",
+          alt: "Co-workers at reception",
         },
-        title: "Tu tribu<br />te espera",
+        title: "Your tribe<br />waits for you",
       },
     ],
     hotelSection: {
-      title: "Hoteles que son hogares",
+      title: "Hotels that are homes",
       detail:
-        "Siéntete parte de la tribu en un ambiente diseñado para que<br />experimentes el viaje que va a cambiar algo en ti.",
+        "Feel part of the tribe in an environment designed for you<br />to experience the trip that will change something in you.",
       hotelsInfo: [
         {
           img: {
             url: "/assets/Home/urban-slide.png",
-            alt: "Mujer cocinando y riendo",
+            alt: "Woman cooking and laughing",
           },
           title: {
             url: "/assets/urban-logo.png",
-            alt: "logo de hotel Urban",
+            alt: "Urban hotel logo",
           },
           widthTitle: {
             desktop: 214,
@@ -125,30 +125,30 @@ export default function handler(
           location: "Arequipa",
           backgroundColor: "primary",
           detail:
-            "Hub de exploradores, artistas y profesionales que ven al mundo su verdadero hogar.",
+            "Hub of explorers, artists and professionals who see the world as their true home.",
           servicesIcon: [
             {
               url: "/assets/Home/Bed.png",
-              alt: "Logo de cama",
+              alt: "Logo of bed",
             },
             {
               url: "/assets/Home/Silverware.png",
-              alt: "Logo de cubiertos",
+              alt: "Logo of cutlery",
             },
             {
               url: "/assets/Home/Horse.png",
-              alt: "Logo de caballo de carrusel",
+              alt: "Logo of carousel horse",
             },
           ],
         },
         {
           img: {
             url: "/assets/Home/tribe-slide.png",
-            alt: "Mujer cocinando y riendo",
+            alt: "Woman cooking and laughing",
           },
           title: {
             url: "/assets/tribe-logo.png",
-            alt: "logo de hotel Tribe",
+            alt: "Tribe hotel logo",
           },
           widthTitle: {
             desktop: 111.36,
@@ -161,30 +161,30 @@ export default function handler(
           location: "Arequipa",
           backgroundColor: "#ADC22F",
           detail:
-            "Hub de exploradores, artistas y profesionales que ven al mundo su verdadero hogar.",
+            "Hub of explorers, artists and professionals who see the world as their true home.",
           servicesIcon: [
             {
               url: "/assets/Home/Bed.png",
-              alt: "Logo de cama",
+              alt: "Logo of bed",
             },
             {
               url: "/assets/Home/Silverware.png",
-              alt: "Logo de cubiertos",
+              alt: "Logo of cutlery",
             },
             {
               url: "/assets/Home/Horse.png",
-              alt: "Logo de caballo de carrusel",
+              alt: "Logo of carousel horse",
             },
           ],
         },
         {
           img: {
             url: "/assets/Home/family-slide.png",
-            alt: "Familia paseando en bicicleta",
+            alt: "Family riding a bike",
           },
           title: {
             url: "/assets/family-logo.png",
-            alt: "Logo de hotel Family",
+            alt: "Family hotel logo",
           },
           widthTitle: {
             desktop: 162,
@@ -197,19 +197,19 @@ export default function handler(
           location: "Arequipa",
           backgroundColor: "#AA2275",
           detail:
-            "Hub de exploradores, artistas y profesionales que ven al mundo su verdadero hogar.",
+            "Hub of explorers, artists and professionals who see the world as their true home.",
           servicesIcon: [
             {
               url: "/assets/Home/Bed.png",
-              alt: "Logo de cama",
+              alt: "Logo of bed",
             },
             {
               url: "/assets/Home/Silverware.png",
-              alt: "Logo de cubiertos",
+              alt: "Logo of cutlery",
             },
             {
               url: "/assets/Home/Horse.png",
-              alt: "Logo de caballo de carrusel",
+              alt: "Logo of carousel horse",
             },
           ],
         },

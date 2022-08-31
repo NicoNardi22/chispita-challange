@@ -88,6 +88,8 @@ const Home: NextPage<Props> = ({ navUrls, landing, footerData }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { locale } = context;
+
   const emptyUrls: { urls: Array<string> } = { urls: [""] };
   const emptyLanding: Data = {
     bannerDesktop: [],
@@ -122,18 +124,34 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     //url from page/api
     const resUrls = await axios("http://localhost:3000/api/nav");
     const navUrls = await resUrls.data;
+    const enResUrls = await axios("http://localhost:3000/api/nav-en");
+    const enNavUrls = await enResUrls.data;
 
     // landing data
     const resLanding = await axios("http://localhost:3000/api/home");
     const landing = await resLanding.data;
+    const enResLanding = await axios("http://localhost:3000/api/home-en");
+    const enLanding = await enResLanding.data;
 
     // Footer data
     const resFooter = await axios("http://localhost:3000/api/footer");
     const footerData = await resFooter.data;
+    const enResFooter = await axios("http://localhost:3000/api/footer-en");
+    const enFooterData = await enResFooter.data;
 
-    return {
-      props: { navUrls, landing, footerData },
-    };
+    if (locale === "es-AR") {
+      return {
+        props: { navUrls, landing, footerData },
+      };
+    } else {
+      return {
+        props: {
+          navUrls: enNavUrls,
+          landing: enLanding,
+          footerData: enFooterData,
+        },
+      };
+    }
   } catch (error) {
     console.error(error);
   }

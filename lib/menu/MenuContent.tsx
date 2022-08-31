@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MouseEventHandler } from "react";
+import { useRouter } from "next/router";
 
 import Close from "../icons/Close";
 import Globe from "../icons/Globe";
@@ -24,16 +25,17 @@ const MenuContent = ({
   let experimentaUrls: Array<string> = [];
 
   navUrls.urls.map((url) => {
-    if (url.includes("experimenta")) {
+    if (url.includes("experimenta") || url.includes("experience")) {
       experimentaUrls.push(url);
-    } else if (url.includes("alojate")) {
+    } else if (url.includes("alojate") || url.includes("stay")) {
       alojateUrl = url;
     } else if (url.includes("co-work")) {
       coWorkUrl = url;
-    } else if (url.includes("unete")) {
+    } else if (url.includes("unete") || url.includes("join-up")) {
       uneteUrl = url;
     }
   });
+  const router = useRouter();
 
   const [menuClass, setMenuClass] = useState("");
   const [dropdownMenuShow, setDropdownMenuShow] = useState(false);
@@ -66,12 +68,16 @@ const MenuContent = ({
       <div className="mt-10">
         <div>
           <Link href={alojateUrl}>
-            <a className="text-4xl font-semibold">Alojate</a>
+            <a className="text-4xl font-semibold capitalize">
+              {alojateUrl.replace("/", "")}
+            </a>
           </Link>
         </div>
         <div className="pt-8">
           <Link href={coWorkUrl}>
-            <a className="text-4xl font-semibold">Co-work</a>
+            <a className="text-4xl font-semibold capitalize">
+              {coWorkUrl.replace("/", "")}
+            </a>
           </Link>
         </div>
         <div className="pt-8">
@@ -79,35 +85,51 @@ const MenuContent = ({
             className="flex justify-between items-center cursor-pointer"
             onClick={() => setDropdownMenuShow(!dropdownMenuShow)}
           >
-            <p className="text-4xl font-semibold">Experimenta</p>
+            <p className="text-4xl font-semibold">
+              {router.locales != undefined && router.locale === "es-AR"
+                ? "Experimenta"
+                : "Experience"}
+            </p>
             {dropdownMenuShow ? <Plus /> : <Minus />}
           </div>
         </div>
         <div className={"pt-8 pl-4 " + (dropdownMenuShow ? "hidden" : "")}>
-          <div>
-            <Link href={experimentaUrls[0]}>
-              <a className="text-4xl font-semibold">City Host</a>
-            </Link>
-          </div>
-          <div className="pt-8">
-            <Link href={experimentaUrls[1]}>
-              <a className="text-4xl font-semibold">Actividades</a>
-            </Link>
-          </div>
-          <div className="pt-8">
-            <Link href={experimentaUrls[2]}>
-              <a className="text-4xl font-semibold">Gastronomía</a>
-            </Link>
-          </div>
+          {experimentaUrls.map((url, index) => {
+            return (
+              <div key={index} className={index > 0 ? "pt-8" : ""}>
+                <Link href={url}>
+                  <a className="text-4xl font-semibold capitalize">
+                    {router.locales != undefined && router.locale === "es-AR"
+                      ? url.replace("/experimenta/", "")
+                      : url.replace("/experience/", "")}
+                  </a>
+                </Link>
+              </div>
+            );
+          })}
         </div>
         <div className="pt-8">
           <Link href={uneteUrl}>
-            <a className="text-4xl font-semibold">Únete</a>
+            <a className="text-4xl font-semibold capitalize">
+              {uneteUrl.replace("/", "")}
+            </a>
           </Link>
         </div>
-        <div className="pt-10 flex items-center">
-          <Globe />
-          <a className="ml-3">English</a>
+        <div className="pt-10">
+          {router.locales != undefined ? (
+            <div className="flex items-center">
+              <Globe />
+              {router.locale === "es-AR" ? (
+                <Link href={router.asPath} locale={router.locales[1]}>
+                  <a className="ml-3">English</a>
+                </Link>
+              ) : (
+                <Link href={router.asPath} locale={router.locales[0]}>
+                  <a className="ml-3">Spanish</a>
+                </Link>
+              )}
+            </div>
+          ) : null}
         </div>
         <div className="mt-11">
           <ReservarBtn fullwidth={true} fillIcon="white" />

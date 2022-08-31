@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Drawer from "./drawer/Drawer";
 import { useDrawer } from "./drawer/DrawerContext";
 import Calendar from "./icons/Calendar";
@@ -14,6 +15,7 @@ const ReservarBtn = ({
   backgroundColor?: string;
   textColor?: string;
 }) => {
+  const router = useRouter();
   const [btnClass, setBtnClass] = useState("");
   const [txtClass, setTxtClass] = useState("");
 
@@ -57,7 +59,11 @@ const ReservarBtn = ({
     <div>
       <button className={btnClass} onClick={() => setOpenDrawer(!openDrawer)}>
         {fillIcon != "" ? <Calendar fill={fillIcon} /> : <Calendar />}
-        <p className={txtClass}>Reservar</p>
+        <p className={txtClass}>
+          {router.locale != undefined && router.locale === "es-AR"
+            ? "Reservar"
+            : "Reserve"}
+        </p>
       </button>
       <Drawer />
     </div>
